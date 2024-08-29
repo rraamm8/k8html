@@ -1,0 +1,30 @@
+* {
+    padding: 10px;
+    margin: 10px;
+}
+
+body {
+    background-color: rgb(210, 221, 172);
+    color: white;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+ul {
+    font-style: oblique;
+    list-style: none;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(34, 107, 59);
+    color: white;
+    height: 110px;
+}
+
+li:hover {
+    background-color: rgb(243, 232, 131);
+}
