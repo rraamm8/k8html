@@ -120,3 +120,35 @@ h2 {
     font-size: medium;
     color: gray;
   }
+
+  span {
+    font-weight: bold;
+    color:darkgreen;
+  }
+
+  @media screen and (max-width : 1024px) {
+    header, main, footer {
+        width: 100%;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width : 768px) {
+    header, header ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      
+      width: 100%;
+    }
+    header {
+      height: auto;
+      padding: 20px;
+    }
+  
+    header li{
+      width: 90%;
+      margin-bottom: 5px;
+    }
+  }
