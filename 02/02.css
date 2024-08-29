@@ -1,9 +1,15 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
 header {
     background-color: aliceblue;
 }
 
 main {
-    background-color: aliceblue;
+    background-color: rgb(201, 221, 231);
 }
 
 footer {
@@ -11,3 +17,20 @@ footer {
     color: white;
 }
 
+#menu > a {
+    background-color: blue;
+    color: white;
+}
+
+section {
+    background-color: white;
+}
+
+
+.s1 {
+    background-color: rgb(44, 92, 38);
+}
+
+.s2 {
+    background-color: aquamarine;
+}
