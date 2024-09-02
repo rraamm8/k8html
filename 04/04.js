@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
     bt3.addEventListener('click', ()=>{
         //msg.innerHTML = '<h2>랜덤수생성</h2>'
-        msg.innerHTML = `<h2>${bt3.textContent}</h2>`;
+        let n =  Math.floor(Math.random() * 6) + 1;
+        console.log('n=', n);
+        msg.innerHTML = `<h2>${bt3.textContent}:${n}</h2>`;
     });
 });
