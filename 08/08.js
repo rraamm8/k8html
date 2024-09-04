@@ -1,32 +1,25 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-    const img = document.querySelector('img');
-    const bt = document.querySelector('button');
+    //요소 가져오기
+    const img = document.querySelector('.row>img');
+    const txt1 = document.querySelector('#txt1');
+    const bt1 = document.querySelector('#bt1');
 
+    //랜덤수
     let n;
-    let flag = false;
+    //let flag = false;
 
-    bt.addEventListener('click', (e)=>{
+    bt1.addEventListener('click', (e)=>{
         e.preventDefault();
-        if(numInput.value ==''){
+        n = Math.floor(Math.random()*100) + 1; //1 ~ 100까지
 
+        if(n === parseInt(txt1.value)) {
+            img.setAttribute('src', '../img/good.png');
         }
-
-        if(numInput.value <1 || numInput.value >100) {
-
-        }
-
-        if(!flag) {
-
-        }
-
-        msg.innerHTML = "";
-        if(n === parseInt(numInput.value)){
-        }
-        else if (n > numInput.value){
-            upDownImg.setAttribute('src', "./img/up.png");
+        else if (n > parseInt(txt1.value)){
+            img.setAttribute('src', '../img/up.png')
         }
         else {
-            upDownImg.setAttribute('src', "./img/down.png");
+            img.setAttribute('src', '../img/down.png')
         }
 
     });
