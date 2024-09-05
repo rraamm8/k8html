@@ -18,5 +18,5 @@ input{
 button {
     margin-left: 20px;
     background-color:blue;
-    width: 80px;
+    width: auto;
 }
