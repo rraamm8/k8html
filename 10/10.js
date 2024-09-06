@@ -1,97 +1,38 @@
-let arr = [1, 2, 3, 4, 5];
+document.addEventListener('DOMContentLoaded', ()=>{
+    //요소가져오기
+    const divNum = document.querySelector('#divNum') ;
+  const divplus = document.querySelector('.divplus') ;
+  const divBonus = document.querySelector('#divBonus') ;
+  const bt = document.querySelector('.sec > button') ;
 
-console.log('arr : ', arr);
-console.log('arr 개수 : ', arr.length);
+  //요소 숨기기
+  divNum.style.display = 'none';
+  divplus.style.display = 'none';
+  divBonus.style.display = 'none';
 
-//배열 요소 접근
-console.log('맨처음요소 접근', arr[0])
-console.log('맨처음요소 접근', arr[1])
+  //버튼 클릭
+  bt.addEventListener('click', (e)=>{
+    e.preventDefault();
 
-//배열의 전체 요소에 접근 : 배열의 순회
-console.log('for')
-for (let i=0; i < arr.length; i++){
-    console.log(`${i+1}번째 : ${arr[i]}`)
-}
+    let arr = [] ;
+    while( arr.length < 7) {
+      let n = Math.floor(Math.random() * 45) + 1 ; //1~45
+      if ( !arr.includes(n) ) arr.push(n) ;
+    }
 
-console.log('for ... in')
-for (let i in arr){
-    console.log(`${parseInt(i)+1}번째 : ${arr[i]}`);
-}
+    const lottoNumbers = arr.slice(0, 6).sort((a, b) => a - b);
+        const bonusNumber = arr[6];
 
-console.log('for ... of')
-for (let item of arr){
-    console.log(`${item}`);
-}
+        console.log('Lotto numbers:', lottoNumbers, 'Bonus number:', bonusNumber);
 
-console.log('for ... of')
-for (let item of arr){
-    console.log(`${item} : ${item % 2 == 0 ? "짝" : "홀"}`);
-}
+        // 로또 번호와 보너스 번호를 화면에 표시
+        divNum.querySelectorAll('span').forEach((span, i) => span.textContent = lottoNumbers[i]);
+        divBonus.querySelector('span').textContent = bonusNumber;
 
-for (let [i,item] of arr.entries()){
-    console.log(`${parseInt(i)+1}번째 : ${item % 2 == 0 ? "짝" : "홀"}`);
-}
+        // 요소 보이기
+        divNum.style.display = 'block';
+        divplus.style.display = 'block';
+        divBonus.style.display = 'block';
 
-console.log('forEach')
-arr.forEach((item, i)=>{
-    console.log(`${parseInt(i)+1}번째 : ${item % 2 == 0 ? "짝" : "홀"}`);
+    });
 });
-
-//arr = []
-//arr.length = 0; //JS만의 특성. 어레이 초기화
-//console.log('arr : ', arr);
-
-arr.push(6);
-console.log('arr push', arr);
-arr.pop();
-console.log('arr pop', arr);
-
-arr.unshift(6);
-console.log('arr unshift', arr);
-arr.shift();
-console.log('arr shift', arr);
-
-//splice로 삭제
-let arr2 = arr.splice(2, 1)
-console.log('arr splice', arr);
-console.log('arr splice', arr2);
-
-//splice로 변경
-arr.splice(2, 1, 'a');
-console.log('arr splice', arr);
-
-//splice로 추가
-arr.splice(2,0,3);
-console.log('arr splice', arr);
-
-arr = [1,2,3,4,5];
-arr2 = arr.map((item)=>{
-    let item2 = item *2;
-    return item2;
-});
-
-console.log('arr map 결과 arr2 :', arr2)
-
-arr2 = arr.map((item)=>{
-    let item2 = item *2;
-    return item2;
-});
-
-
-arr2 = [];
-for(let item of arr){
-    if(item %2 ==0) arr2.push(item2);
-}
-console.log('arr map 결과 arr2 :', arr2);
-
-arr2 = arr.map(item=> item %2 == 0 ? "짝" : "홀");
-console.log('arr map 결과 arr2 :', arr2);
-
-arr2 = arr.filter(item=> item %2 == 0);
-console.log('arr filter 결과 arr2 :', arr2);
-
-arr = [4,3,5,1,2]
-console.log(`${arr} => 정렬 ${arr.sort((a,b)=> b-a)}`)
-
-
-
