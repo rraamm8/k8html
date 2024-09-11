@@ -12,7 +12,7 @@ header, main{
 
 header {
     height: 80px;
-    background-color: rgb(163, 163, 15);
+    background-color: rgb(97, 173, 78);
     color: white;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +29,7 @@ main {
     justify-content: center;
     align-items: center;
 
-    height: 500px;
+    height: auto;
     border: 3px dotted darkgreen;
     border-top: none;
 }
