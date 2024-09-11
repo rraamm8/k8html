@@ -68,6 +68,12 @@ const getYesterday = () =>{
   return `${year}-${month}-${day}`;
 }
 
+//radio 값 가져오기
+const r1 = document.querySelector('#r1');
+const r2 = document.querySelector('#r2');
+const r3 = document.querySelector('#r3');
+
+
 
 //DOM 생성 후
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -82,6 +88,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   //date 요소 최대값 설정
   dt.max = yesterday;
+
+  //gubun
+  console.log(get.gubun);
 
   //디폴트로 어제 날짜 설정, 기본 첫 페이지 보이기
   dt.value = yesterday;

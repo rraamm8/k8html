@@ -68,13 +68,25 @@ const getYesterday = () =>{
   return `${year}-${month}-${day}`;
 }
 
+//radio 값 가져오기
+//const r1 = document.querySelector('#r1');
+//const r2 = document.querySelector('#r2');
+//const r3 = document.querySelector('#r3');
+
+const getGubun = () => {
+
+  // radio버튼의 클릭된 것만 가져오기
+  const gubun = document.querySelector('input[name=mvGubun]:checked') ;  
+  console.log('gubun = ', gubun.value) ;
+  return gubun.value ;
+}
 
 //DOM 생성 후
 document.addEventListener('DOMContentLoaded', ()=>{
   //요소 가져오기
   const dt = document.querySelector('#dt');
   const ul = document.querySelector('.sec > ul');
-  const sel1 = document.querySelector('#sel1');
+  const radios = document.querySelectorAll('input[name=mvGubun]') ;
 
   //어제 날짜 구하기
   let yesterday = getYesterday();
@@ -85,15 +97,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   //디폴트로 어제 날짜 설정, 기본 첫 페이지 보이기
   dt.value = yesterday;
-  getData(dt.value.replaceAll('-',''), ul, sel1.value);
+  getData(dt.value.replaceAll('-',''), ul, getGubun());
 
   //데이터 가져오기
   dt.addEventListener('change', ()=>{
-    getData(dt.value.replaceAll('-',''), ul, sel1.value);
+    getData(dt.value.replaceAll('-',''), ul, getGubun());
   });
 
   sel1.addEventListener('change', ()=>{
-    getData(dt.value.replaceAll('-',''), ul, sel1.value);
+    getData(dt.value.replaceAll('-',''), ul, getGubun());
   });
+
+// fieldset.addEventListener('click', ()=>{
+// getData(dt.value.replaceAll('-', ''), ul, getGubun());
+// });
+
+  for(let radio of radios){
+    radio.addEventListener('click', ()=>{
+      if(radio.checked) getData(dt.value.replaceAll('-', ''), ul, radio.value);
+    })
+  }
 
 });
