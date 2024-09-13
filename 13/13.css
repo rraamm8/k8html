@@ -15,22 +15,7 @@
   align-items: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-gap: 10px;
-}
-.col {
-  width: 100px;
-  height: 100px;
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
-}
-#msg {
-  margin-top: 20px;
-  font-size: 20px;
+img {
+  width: 60px;
+  height: 60px;
 }
