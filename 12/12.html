@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang우행록 어리석은 자의 기록="ko">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"  type="text/css" href="../js.css"> 
+  <link rel="stylesheet"  type="text/css" href="../js.css">
   <link rel="stylesheet"  type="text/css" href="./12.css">
   <title>JS기초</title>
 
@@ -20,16 +20,19 @@
     </div>
   </header>
   <form>
-    <main id="boxofficeMain">
+    <main id='boxofficeMain'>
       <section class='sec'>
-         <div class="divDt">
-          <input type="date" id= 'dt' name = 'dt'>
-          <select id="sel1" name="sel1">
-            <option value="T" selected>전체 영화</option>
-            <option value="K">한국 영화</option>
-            <option value="F">외국 영화</option>
-          </select>
-         </div>
+        <div class='divDt'>
+          <input type='date' id='dt' name='dt'>
+          <fieldset>
+            <input type='radio' id='r1' name='mvGubun' value='K'>
+            <label for='r1'>한국영화</label>
+            <input type='radio' id='r2' name='mvGubun' value='F'>
+            <label for='r2'>외국영화</label>
+            <input type='radio' id='r3' name='mvGubun' value='T' checked>
+            <label for='r3'>전체</label>
+          </fieldset>
+        </div>
       </section>
       <section class='sec'>
         <ul>
@@ -37,6 +40,9 @@
         </ul>
       </section>
     </main>
+    <footer id='mvfooter'>
+      <div id='mvinfo'></div>
+    </footer>
   </form>
 </body>
 
