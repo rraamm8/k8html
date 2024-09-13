@@ -24,42 +24,17 @@ document.addEventListener('DOMContentLoaded',() => {
   //div 박스처리
   for(let col of cols){
     col.addEventListener('click', () => {
-      if(col.innerHTM){
-  });
+      if(col.innerHTML.includes('img')) return;
 
-  // 각 셀 클릭 이벤트
-  cols.forEach((col, index) => {
-    col.addEventListener('click', () => {
-      if (!isShuffle || isGameOver) return;
+      let idx = col.getAttribute('id').slice(-1) -1;
+      console.log(idx, arr[idx]);
 
-      if (arr[index] === 1) {
-        col.style.backgroundColor = 'red';  // 폭탄인 경우 빨간색으로 표시
-        msg.innerHTML = '폭탄을 찾았습니다! 게임 오버!';
-        bt.innerHTML = '게임 다시 시작';
-        isGameOver = true;
-      } else {
-        col.style.backgroundColor = 'green';  // 폭탄이 아닌 경우 초록색으로 표시
-        cnt++;
-        if (cnt === 8) {
-          msg.innerHTML = '축하합니다! 폭탄을 피했습니다!';
-          bt.innerHTML = '게임 다시 시작';
-          isGameOver = true;
-        }
+      if(arr[idx]==0){
+        col.innerHTML = '<img src="../img/hart.png">';
+      } else{
+        col.innerHTML = '<img src="../img/boom.png">';
+        msg.innerHTML = '<h2>실패!!</h2>'
       }
-    });
   });
-
-  // 게임 다시 시작
-  bt.addEventListener('click', () => {
-    if (isGameOver) {
-      // 초기화
-      arr = [0, 0, 0, 0, 0, 0, 0, 0, 1];
-      isShuffle = false;
-      isGameOver = false;
-      cnt = 0;
-      cols.forEach(col => col.style.backgroundColor = '#ccc');
-      msg.innerHTML = '';
-      bt.innerHTML = '게임 시작';
-    }
-  });
+}
 });
